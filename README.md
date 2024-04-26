@@ -158,13 +158,11 @@ The following section provides examples of terminal outputs during various opera
 ### Example Output: Creating a Merkle Tree and Minting NFT
 
 ```plaintext
-➜ compressed-nft git:(main) ✗ npx ts-node ./app/index.ts
+➜✗ npx ts-node ./app/index.ts
 Payer address: 2FgnzUAv2s3681xqRJsxMwQQBsG2M6b9wmj1guSo23k2
 Creating a new Merkle tree...
 treeAddress: BxD8JgwBg5yE7jRg1vr4e4YAGtHseUkQYtYVTjDsdVoc
 treeAuthority: FafneKDfrZyBEX24dSfGo89qRJ2vBx8mtFNWSKMJe12e
-(node:209460) [DEP0040] DeprecationWarning: The punycode module is deprecated. Please use a userland alternative instead.
-(Use node --trace-deprecation ... to show where the warning was created)
 Transaction confirmed: {
   context: { apiVersion: '1.18.11', slot: 294773148 },
   value: {
