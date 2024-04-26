@@ -87,14 +87,14 @@ SolMint-BubblegumNFT/
 ├── app/                      # Application code for handling business logic
 │   ├── compression/          # Compression logic for NFTs
 │   │   └── compression.ts    # Implementation of compression functionality
-│   │   └── dto.ts            # Data transfer objects for NFT metadata
-│   ├── verification/         # Verification tests for NFT transactions
-│   │   └── verify.ts         # Verification logic for NFT proofs
-│   └── routes.ts             # API routes for external integration
-│   └── server.ts             # Server setup and API call handling
-│
-├── utils/                    # Helper functions and utilities
-│   └── readAPI.ts            # Implements the Digital Asset Standard Read API
+│   │   └── handlers.ts       # NFT metadata and all the logical functions for NFT transactions
+│   ├── utils/                # all the logics for NFT transactions
+│   │   └── utils.ts          # utilities for NFT proofs
+│   │   └── readAPI.ts        # Implements the Digital Asset Standard Read API
+│   │   └── helpers.ts        # Helper functions and utilities
+│   │   └── dtos.ts           # Data transfer objects for NFT metadata
+├   └── index.ts/             # Simplify the organization of code. It serves as an entry point for importing and exporting modules in project
+│   └── readAPI.ts            # export functionalities for external integration
 │
 ├── programs/                 # Solana smart contract implementation
 │   └── src/                  # Source files for the smart contract
