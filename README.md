@@ -48,7 +48,6 @@ To compile the smart contract and install node dependencies, use:
 
 ```bash
 yarn
-cargo clean
 anchor build
 ```
 
@@ -58,7 +57,7 @@ Set the Solana CLI to use the devnet cluster for deployment and testing:
 ```bash
 solana config set --url https://api.devnet.solana.com
 
-solana airdrop 1 2FgnzUAv2s3681xqRJsxMwQQBsG2M6b9wmj1guSo23k2 --url https://api.devnet.solana.com
+solana airdrop 1 2FgnzUAv2s3681x**********************3k2 --url https://api.devnet.solana.com
 ```
 
 ### Deploying the Smart Contract
