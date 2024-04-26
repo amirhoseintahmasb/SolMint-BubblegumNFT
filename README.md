@@ -71,8 +71,7 @@ anchor deploy
 Initialize the testing environment and run tests using:
 
 ```bash
-npx ts-node -r ./tests/setup.ts
-anchor test --skip-build --skip-deploy --skip-local-validator
+npx ts-node ./app/index.ts 
 ```
 
 ## Project Structure and Code Overview
@@ -94,13 +93,15 @@ SolMint-BubblegumNFT/
 │   │   └── helpers.ts        # Helper functions and utilities
 │   │   └── dtos.ts           # Data transfer objects for NFT metadata
 ├   └── index.ts/             # Simplify the organization of code. It serves as an entry point for importing and exporting modules in project
-│   └── readAPI.ts            # export functionalities for external integration
 │
-├── programs/                 # Solana smart contract implementation
+│
+├── programs/compressed-nft   # Solana smart contract implementation
 │   └── src/                  # Source files for the smart contract
-│       ├── actions.rs        # Defines actions like mint and verify
-│       ├── state.rs          # State management for the smart contract
+│       ├── actions           # Defines actions like mint and verify
+│       ├── state             # State management for the smart contract
 │       └── lib.rs            # Main library entry, includes program logic
+│       └── Cargo.toml           
+│       └── Xargo.toml
 │
 ├── .local_keys/              # Local storage for keys and wallet information
 ├── .env                      # Environment variables for local setup
@@ -150,9 +151,66 @@ SolMint-BubblegumNFT/
 ## Additional Resources
 For more detailed usage and advanced configurations, refer to the project's extensive documentation and inline comments throughout the codebase. These guides offer insights into handling payer balance, maximum size calculations, and specific configurations for minting and transferring NFTs.
 
+## Sample Terminal Outputs
+
+The following section provides examples of terminal outputs during various operations such as creating a Merkle tree, minting NFTs, and transaction confirmations. These outputs help in understanding the functionality and responses of the system during execution.
+
+### Example Output: Creating a Merkle Tree and Minting NFT
+
+```plaintext
+➜ compressed-nft git:(main) ✗ npx ts-node ./app/index.ts
+Payer address: 2FgnzUAv2s3681xqRJsxMwQQBsG2M6b9wmj1guSo23k2
+Creating a new Merkle tree...
+treeAddress: BxD8JgwBg5yE7jRg1vr4e4YAGtHseUkQYtYVTjDsdVoc
+treeAuthority: FafneKDfrZyBEX24dSfGo89qRJ2vBx8mtFNWSKMJe12e
+(node:209460) [DEP0040] DeprecationWarning: The punycode module is deprecated. Please use a userland alternative instead.
+(Use node --trace-deprecation ... to show where the warning was created)
+Transaction confirmed: {
+  context: { apiVersion: '1.18.11', slot: 294773148 },
+  value: {
+    confirmationStatus: 'confirmed',
+    confirmations: 3,
+    err: null,
+    slot: 294773145,
+    status: { Ok: null }
+  }
+}
+
+Merkle tree created successfully!
+https://explorer.solana.com/tx/3Dm39AGgbeDuZnRGm5beGSfARHxmcJG9YP41YKUNNdofoXM317Wk9y68nyPGmiwVnXXYH4fSPY3UEiMhAzeEHxmc?cluster=devnet
+```
+
+### Example Output: Creating a Collection and Minting Tokens
+
+```plaintext
+Payer address: 2FgnzUAv2s3681xqRJsxMwQQBsG2M6b9wmj1guSo23k2
+Creating collection with name: Super Sweet NFT Collection
+Creating the collection's mint...
+Mint address: CzbmXyYLgbuYHP2T2jrgfj9qsUMSXUTD3ZFHdswdLzVi
+Creating a token account...
+Token account: EwtmUPCXPMk2gXQBVh7jAHba4paSUSisg1eYSJJsCAYS
+Minting 1 token for the collection...
+Metadata account: CnexiCSRaXRLqgZp1EAj7DkU3p9Gt5d9Wdb7WoRWbHyW
+Master edition account: 7sbyGojGwxTh95tVv8zhuhVKDXfrH5PQSXkW9CLpGKXJ
+
+Collection successfully created!
+https://explorer.solana.com/tx/5BkdXUwM1dVjTau8eJUz6nBiyk4uoNWwcqEkDbhnJZM1TBswZcdDpgGAtuzXpaovyA54gi51cTxkqh2d9fZMm9de?cluster=devnet
+```
+
+### Example Output: Successfully Minted a Compressed NFT
+
+```plaintext
+Payer address: 2FgnzUAv2s3681xqRJsxMwQQBsG2M6b9wmj1guSo23k2
+Receiver address: 4JmK4dkQ5cz1cUQcozkPapiff2HSeXkVM9t6nhun8qxi
+Successfully minted the compressed NFT!
+https://explorer.solana.com/tx/5seaGCKb5kGv9j3mntoeAA389Koi2XvUU47YRyZZvbCVKxg8odUhoHcNEWyPySw8fGBCnTgJHmHj12prkCX2HQvw?cluster=devnet
+```
+
 ## Conclusion
+
 This project showcases the integration of advanced blockchain technologies to create a scalable and cost-efficient NFT minting platform on the Solana network. Through meticulous planning and robust coding practices, we have overcome significant challenges to provide a reliable system for NFT creation.
 
+These terminal outputs exemplify the typical interactions and responses during the operation of the SolMint-BubblegumNFT project. They illustrate how the system processes and confirms transactions related to the creation of Merkle trees, minting of NFTs, and the handling of blockchain interactions, providing a practical view into the application's functionality.
 ---
 
 For further exploration and real-time updates, follow the transaction history and progress on the Solana Explorer through provided links after transactions. Ensure your environment variables and dependencies are correctly set as per the installation guide for optimal performance.
