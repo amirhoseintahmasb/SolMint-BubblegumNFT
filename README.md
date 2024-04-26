@@ -206,9 +206,9 @@ https://explorer.solana.com/tx/5seaGCKb5kGv9j3mntoeAA389Koi2XvUU47YRyZZvbCVKxg8o
 
 ## Conclusion
 
-This project showcases the integration of advanced blockchain technologies to create a scalable and cost-efficient NFT minting platform on the Solana network. Through meticulous planning and robust coding practices, we have overcome significant challenges to provide a reliable system for NFT creation.
-
+This project showcases the integration of advanced blockchain technologies to create a scalable and cost-efficient NFT minting platform on the Solana network.
 These terminal outputs exemplify the typical interactions and responses during the operation of the SolMint-BubblegumNFT project. They illustrate how the system processes and confirms transactions related to the creation of Merkle trees, minting of NFTs, and the handling of blockchain interactions, providing a practical view into the application's functionality.
+
 ---
 
 For further exploration and real-time updates, follow the transaction history and progress on the Solana Explorer through provided links after transactions. Ensure your environment variables and dependencies are correctly set as per the installation guide for optimal performance.
